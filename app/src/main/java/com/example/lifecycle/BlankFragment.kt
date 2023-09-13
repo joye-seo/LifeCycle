@@ -18,13 +18,15 @@ class BlankFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        Toast.makeText(requireContext(), "fragment-onAttach", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onAttach")
         Log.d("lifecycle_fragment", "fragment-onAttach")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Toast.makeText(requireContext(), "fragment-onCreate", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onCreate")
         Log.d("lifecycle_fragment", "fragment-onCreate")
     }
 
@@ -32,7 +34,8 @@ class BlankFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Toast.makeText(requireContext(), "fragment-onCreateView", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onCreateView")
         Log.d("lifecycle_fragment", "fragment-onCreateView")
 
         _binding = FragmentBlankBinding.inflate(inflater,container,false)
@@ -42,7 +45,8 @@ class BlankFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(requireContext(), "fragment-onViewCreated", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onViewCreated")
         Log.d("lifecycle_fragment", "fragment-onViewCreated")
         binding.btnBack.setOnClickListener {
             navigateToFirstActivity()
@@ -51,50 +55,58 @@ class BlankFragment : Fragment() {
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
-        Toast.makeText(requireContext(), "fragment-onViewStateRestored", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onViewStateRestored")
         Log.d("lifecycle_fragment", "fragment-onViewStateRestored")
     }
 
     override fun onStart() {
         super.onStart()
-        Toast.makeText(requireContext(), "fragment-onStart", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onStart")
         Log.d("lifecycle_fragment", "fragment-onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        Toast.makeText(requireContext(), "fragment-onResume", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onResume")
         Log.d("lifecycle_fragment", "fragment-onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Toast.makeText(requireContext(), "fragment-onPause", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onPause")
         Log.d("lifecycle_fragment", "fragment-onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Toast.makeText(requireContext(), "fragment-onStop", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onStop")
         Log.d("lifecycle_fragment", "fragment-onStop")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        Toast.makeText(requireContext(), "fragment-onSaveInstanceState", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onSaveInstanceState")
         Log.d("lifecycle_fragment", "fragment-onSaveInstanceState")
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        Toast.makeText(requireContext(), "fragment-onDestroyView", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onDestroyView")
         Log.d("lifecycle_fragment", "fragment-onDestroyView")
     }
 
 
     override fun onDestroy() {
         super.onDestroy()
-        Toast.makeText(requireContext(), "fragment-onDestroy", Toast.LENGTH_SHORT).show()
+
+        requireContext().toast("fragment-onDestroy")
         Log.d("lifecycle_fragment", "fragment-onDestroy")
         _binding = null
     }

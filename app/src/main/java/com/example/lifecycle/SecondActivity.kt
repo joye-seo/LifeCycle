@@ -20,21 +20,21 @@ class SecondActivity : AppCompatActivity() {
           finish()
         }
 
-        Toast.makeText(this, "second-onCreate", Toast.LENGTH_SHORT).show()
+        this.toast("second-onCreate")
         Log.d("lifecycle_second", "second-onCreate")
     }
 
     override fun onStart() {
         super.onStart()
 
-        Toast.makeText(this, "second-onStart", Toast.LENGTH_SHORT).show()
+        this.toast("second-onStart")
         Log.d("lifecycle_second", "second-onStart")
     }
 
     override fun onResume() {
         super.onResume()
 
-        Toast.makeText(this, "second-onResume", Toast.LENGTH_SHORT).show()
+        this.toast("second-onResume")
         Log.d("lifecycle_second", "second-onResume")
 
     }
@@ -42,7 +42,7 @@ class SecondActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
 
-        Toast.makeText(this, "second-onPause", Toast.LENGTH_SHORT).show()
+        this.toast("second-onPause")
         Log.d("lifecycle_second", "second-onPause")
 
     }
@@ -50,7 +50,7 @@ class SecondActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
 
-        Toast.makeText(this, "second-onStop", Toast.LENGTH_SHORT).show()
+        this.toast("second-onStop")
         Log.d("lifecycle_second", "second-onStop")
 
     }
@@ -58,7 +58,7 @@ class SecondActivity : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
 
-        Toast.makeText(this, "second-onRestart", Toast.LENGTH_SHORT).show()
+        this.toast("second-onRestart")
         Log.d("lifecycle_second", "second-onRestart")
 
     }
@@ -66,7 +66,7 @@ class SecondActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
 
-        Toast.makeText(this, "second-onDestroy", Toast.LENGTH_SHORT).show()
+        this.toast("second-onDestroy")
         Log.d("lifecycle_second", "second-onDestroy")
 
     }

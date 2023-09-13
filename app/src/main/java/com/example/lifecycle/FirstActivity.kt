@@ -1,5 +1,6 @@
 package com.example.lifecycle
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -27,21 +28,21 @@ class FirstActivity : AppCompatActivity() {
             changeFragment(blankFragment)
         }
 
-        Toast.makeText(this, "first-onCreate", Toast.LENGTH_SHORT).show()
+        this.toast("first-onCreate")
         Log.d("lifecycle_first", "first-onCreate")
     }
 
     override fun onStart() {
         super.onStart()
 
-        Toast.makeText(this, "first-onStart", Toast.LENGTH_SHORT).show()
+        this.toast("first-onStart")
         Log.d("lifecycle_first", "first-onStart")
     }
 
     override fun onResume() {
         super.onResume()
 
-        Toast.makeText(this, "first-onResume", Toast.LENGTH_SHORT).show()
+        this.toast("first-onResume")
         Log.d("lifecycle_first", "first-onResume")
 
     }
@@ -49,7 +50,7 @@ class FirstActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
 
-        Toast.makeText(this, "first-onPause", Toast.LENGTH_SHORT).show()
+        this.toast("first-onPause")
         Log.d("lifecycle_first", "first-onPause")
 
     }
@@ -57,7 +58,7 @@ class FirstActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
 
-        Toast.makeText(this, "first-onStop", Toast.LENGTH_SHORT).show()
+        this.toast("first-onStop")
         Log.d("lifecycle_first", "first-onStop")
 
     }
@@ -65,7 +66,7 @@ class FirstActivity : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
 
-        Toast.makeText(this, "first-onRestart", Toast.LENGTH_SHORT).show()
+        this.toast("first-onRestart")
         Log.d("lifecycle_first", "first-onRestart")
 
     }
@@ -73,7 +74,7 @@ class FirstActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
 
-        Toast.makeText(this, "first-onDestroy", Toast.LENGTH_SHORT).show()
+        this.toast("first-onDestroy")
         Log.d("lifecycle_first", "first-onDestroy")
 
     }
