@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.lifecycle.databinding.ActivityFirstBinding
 
 class FirstActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityFirstBinding
+    lateinit var blankFragment: BlankFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +21,10 @@ class FirstActivity : AppCompatActivity() {
         binding.btnActivity.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
+        }
+        binding.btnFragment.setOnClickListener {
+            blankFragment = BlankFragment()
+            changeFragment(blankFragment)
         }
 
         Toast.makeText(this, "first-onCreate", Toast.LENGTH_SHORT).show()
@@ -70,6 +76,12 @@ class FirstActivity : AppCompatActivity() {
         Toast.makeText(this, "first-onDestroy", Toast.LENGTH_SHORT).show()
         Log.d("lifecycle_first", "first-onDestroy")
 
+    }
+
+    private fun changeFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.firstFragment.id, fragment)
+            .commit()
     }
 
 }
